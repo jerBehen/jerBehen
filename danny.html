@@ -4,17 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Danny's Gallery</title>
-    <link rel="Stylesheet" href="Stylesheet.css">
+    <link rel="Stylesheet" href="danny-style.css">
 </head>
 <body>
-<header>
-    <h1>Daniel's Gallery</h1>
-    <p>Photos and memories of Danny</p>
-</header>
-<section class="gallery">
-    <img src="Images/IMG_4220.jpeg" alt="Danny 1">
 
-    <!-- Add more photos here -->
+<header>
+    <h1>Danny's Gallery</h1>
+    <p>Danny's Memories from 2025 and beyond</p>
+</header>
+
+<!-- Prom Night -->
+<section class="photo-group">
+    <h2>Danny's Memories and Photos</h2>
+    <div class="fanned-gallery">
+        <img src="Images/danny-ashley.jpg" alt="Danny 1" style="--angle: -10deg" onclick="enlargeImage(this)">
+        <img src="Images/IMG_4220.jpeg" alt="Danny 2" style="--angle: 0deg" onclick="enlargeImage(this)">
+    </div>
+    <p class="description">
+     Danny is a world traveler!
+    </p>
 </section>
+
+<!-- Soccer Group
+<section class="photo-group">
+    <h2>The Palmetto Soccer Team</h2>
+    <div class="fanned-gallery">
+        <img src="Images/DSC_4717.jpg" alt="Ryder Soccer 1" style="--angle: -15deg" onclick="enlargeImage(this)">
+        <img src="Images/DSC_4760.jpg" alt="Ryder Soccer 2" style="--angle: -5deg" onclick="enlargeImage(this)">
+        <img src="Images/DSC_4741.jpg" alt="Ryder Soccer 3" style="--angle: 5deg" onclick="enlargeImage(this)">
+        <img src="Images/DSC_4726.jpg" alt="Ryder Soccer 4" style="--angle: 15deg" onclick="enlargeImage(this)">
+    </div>
+    <p class="description">
+        These photos are from Ryder's team, the Palmetto Tigers.
+    </p>
+</section> -->
+
+<!-- Hidden Modal for Enlarged Image -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <img class="modal-content" id="modalImg" alt="Enlarged image">
+</div>
+
+<!-- JavaScript for modal -->
+<script>
+    function enlargeImage(imgElement) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+
+        modal.style.display = "block";
+        modalImg.src = imgElement.src;
+    }
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+</script>
+
 </body>
 </html>
