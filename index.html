@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--Author: Jerry Behen -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Behen Family Website</title>
+  <link rel="stylesheet" href="Stylesheet.css">
+</head>
+<body>
+<header>
+  <h1>Welcome to the Behen Website!</h1>
+  <p>Enjoy looking at the family events and pictures, send messages too.</p>
+</header>
+<nav>
+  <!--<a href="index.html" class="button">Home</a>
+  <a href="registration.html" class="button">Register</a>
+  <a href="login.html" class="button">Login</a>-->
+</nav>
+<figure>
+  <img src="Images/DannyFamily.jpg" alt="Behen Arms">
+  <img src="Images/Sean-Behen.jpg" alt="Sean Behen Family">
+  <img src="Images/The%20Massa's.jpg" alt="The Massa's Family">
+  <img src="Images/Lily.jpeg" alt="Steven Behen Family">
+       title="The Behen Family">
+  <figcaption>The Behen Family</figcaption>
+
+  <script>
+    const image = document.querySelector("figure img");
+    image.addEventListener("click", () => {
+      image.classList.toggle("enlarged");
+    });
+  </script>
+</figure>
+
+<!-- family Buttons -->
+<div class="slidebar">
+ <!--<button onclick="window.location.href='registration.html'">Register</button>
+  <button onclick="window.location.href='login.html'">Login</button>-->
+  <button onclick="window.location.href='jerry-behen.html'">Home</button>
+  <button onclick="window.location.href='danny-behen.html'">Danny Behen Family</button>
+  <button onclick="window.location.href='Massa.html'">Jeremy Massa Family</button>
+  <button onclick="window.location.href='Sean-Behen.html'">Sean Behen Family</button>
+  <button onclick="window.location.href='steven-behen.html'">Steven and Chase Family</button>
+  <button onclick="window.location.href='jerry-kathy.html'">Jerry Behen Family</button>
+  <!--<button>Jerry Behen Family</button> -->
+  <!--<button>Danny Behen Family</button> -->
+  <!--<button>Jeramy Massa Family</button> -->
+  <!--<button>Sean Behen Family</button> -->
+ <!-- <button>Steven Behen Family</button> -->
+</div>
+</body>
+</html>

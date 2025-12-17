@@ -1,0 +1,87 @@
+/* === General Page Styling === */
+body {
+    background: url(Images/pexels-asadphoto-1320674.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+    color: #333;
+}
+
+
+header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 30px;
+}
+
+.photo-group {
+    margin-bottom: 60px;
+}
+
+.description {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.1em;
+    color: #444;
+}
+
+/* === Fanned Gallery Using Flex + CSS Variables === */
+.fanned-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0;
+    margin-top: 20px;
+    padding: 20px 0;
+}
+
+.fanned-gallery img {
+    width: auto;
+    height: 180px;
+    border: 4px solid #392121;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    transform: rotate(var(--angle, 0deg));
+    transform-origin: bottom center;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    cursor: pointer;
+    margin: 0 -60px; /* Overlap like a fan */
+    z-index: 1;
+}
+
+.fanned-gallery img:hover {
+    transform: scale(1.1) rotate(0deg);
+    z-index: 10;
+}
+
+/* === Modal Enlarged View === */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0.85);
+    text-align: center;
+}
+
+.modal-content {
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000;
+}

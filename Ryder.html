@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryder's Gallery</title>
+  <link rel="Stylesheet" href="ryder-style.css">
+</head>
+<body>
+
+<header>
+  <h1>Ryder's Gallery</h1>
+  <p>Ryder's Memories from 2025 and beyond</p>
+</header>
+
+<!-- Prom Night -->
+<section class="photo-group">
+  <h2>Ryder's Prom Night 2025</h2>
+  <div class="fanned-gallery">
+    <img src="Images/IMG_5512.jpg" alt="Ryder 1" style="--angle: -10deg" onclick="enlargeImage(this)">
+    <img src="Images/IMG_5516.jpg" alt="Ryder 2" style="--angle: 0deg" onclick="enlargeImage(this)">
+    <img src="Images/IMG_9901.JPG" alt="Ryder 3" style="--angle: 10deg" onclick="enlargeImage(this)">
+  </div>
+  <p class="description">
+    Ryder and friends enjoying prom 2025. It was held at Palmetto High's Grand Ballroom.
+  </p>
+</section>
+
+<!-- Soccer Group -->
+<section class="photo-group">
+  <h2>The Palmetto Soccer Team</h2>
+  <div class="fanned-gallery">
+    <img src="Images/DSC_4717.jpg" alt="Ryder Soccer 1" style="--angle: -15deg" onclick="enlargeImage(this)">
+    <img src="Images/DSC_4760.jpg" alt="Ryder Soccer 2" style="--angle: -5deg" onclick="enlargeImage(this)">
+    <img src="Images/DSC_4741.jpg" alt="Ryder Soccer 3" style="--angle: 5deg" onclick="enlargeImage(this)">
+    <img src="Images/DSC_4726.jpg" alt="Ryder Soccer 4" style="--angle: 15deg" onclick="enlargeImage(this)">
+  </div>
+  <p class="description">
+    These photos are from Ryder's team, the Palmetto Tigers.
+  </p>
+</section>
+
+<!-- Hidden Modal for Enlarged Image -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <img class="modal-content" id="modalImg" alt="Enlarged image">
+</div>
+
+<!-- JavaScript for modal -->
+<script>
+  function enlargeImage(imgElement) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+
+    modal.style.display = "block";
+    modalImg.src = imgElement.src;
+  }
+
+  function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+</script>
+
+</body>
+</html>

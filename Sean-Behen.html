@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--Jerry Behen-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Behen Family</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<header>
+    <h1>The Sean Behen Family</h1>
+    <p>Photos, stories, and events for Sean and Hanna's Family.</p>
+    <nav>
+        <!-- <a href="index.html" class="button">Home</a>
+         <a href="registration.html" class="button">Register</a>
+         <a href="login.html" class="button">Login</a> -->
+    </nav>
+</header>
+<section>
+    <h2>About the Sean Behen Family</h2>
+    <p></p>
+    <h2> Photo Gallery</h2>
+    <!--<p> Add photos here</p> -->
+    <figure>
+        <img
+                src="Images/Sean-Behen.jpg."
+                alt="Sean Behen family photo"
+                style="max-width: 300px; border: 5px solid #fff; border-radius: 10px;">
+        <figcaption>Sean, Hanna (Missing in Action), Mar-Mar</figcaption>
+        <script>
+            const image = document.querySelector("figure img");
+            image.addEventListener("click", () => {
+                image.classList.toggle("enlarged");
+            });
+        </script>
+    </figure>
+</section>
+</body>
+</html>
