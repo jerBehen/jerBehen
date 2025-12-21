@@ -1,12 +1,12 @@
 /* === General Page Styling === */
 body {
-    background: url(Images/ittemaldiviano-jmkMl20jNS0-unsplash.jpg) no-repeat center center fixed;
+    background: url(Images/rod-m-7B_rKg-JEGw-unsplash.jpg) no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 30px;
     margin: 0;
-    color:#EED9B7;
+    color: #EED9B7;
 }
 
 
@@ -20,7 +20,7 @@ h1 {
 }
 
 h2 {
-    font-size: 3.5em;
+    font-size: 2.0em;
     margin-top: 30px;
 }
 
@@ -32,7 +32,7 @@ h2 {
     max-width: 800px;
     margin: 20px auto;
     font-size: 3.1em;
-    color: #786440;
+    color: #997f52;
 }
 
 /* === Fanned Gallery Using Flex + CSS Variables === */

@@ -4,17 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ashley's Gallery</title>
-    <link rel="Stylesheet" href="Stylesheet.css">
+    <link rel="Stylesheet" href="ashley-style.css">
 </head>
 <body>
+
 <header>
-    <h1>Ashley Behen</h1>
-    <p>Photos and memories of Ashley</p>
+    <h1>Ashley's Gallery</h1>
+    <p>Ashley's Memories from 2025 and beyond</p>
 </header>
-<section class="gallery">
-    <img src="Images/IMG_0195.jpg" alt="Ashley 1">
-    <img src="Images/IMG_3842.jpeg" alt="Ashley 2">
-    <!-- Add more photos here -->
+
+<!-- Photos of Ashley -->
+<section class="photo-group">
+    <h2>Ashley's Halloween Costume and fishing costume.</h2>
+    <div class="fanned-gallery">
+        <img src="Images/IMG_3843.jpeg" alt="Ashley 1" style="--angle: -10deg" onclick="enlargeImage(this)">
+        <img src="Images/IMG_0195.jpg" alt="Ashley 2" style="--angle: 0deg" onclick="enlargeImage(this)">
+        <img src="Images/danny-ashley.jpg" alt="Ashley 3" style="--angle: 0deg" onclick="enlargeImage(this)">
+    </div>
+    <p class="description">
+        She's a busy Mom!
+    </p>
 </section>
+
+<!-- Add pictures  -->
+<section class="photo-group">
+    <h2></h2>
+    <div class="fanned-gallery">
+
+
+    </div>
+    <p class="description">
+
+    </p>
+</section>
+
+<!-- Hidden Modal for Enlarged Image -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <img class="modal-content" id="modalImg" alt="Enlarged image">
+</div>
+
+<!-- JavaScript for modal -->
+<script>
+    function enlargeImage(imgElement) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+
+        modal.style.display = "block";
+        modalImg.src = imgElement.src;
+    }
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+</script>
+
 </body>
 </html>
+
