@@ -4,39 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cash's Gallery</title>
-  <link rel="Stylesheet" href="cash-style.css">
+  <link rel="stylesheet" href="cash-style.css">
 </head>
 <body>
-
 <header>
   <h1>Cash's Gallery</h1>
-  <p>Cash's Memories from 2025 and beyond</p>
+  <p>Photos and videos of Cash</p>
+
+  <!-- Dropdown menu for videos -->
+  <nav class="dropdown">
+    <button class="dropbtn"> Watch Cash’s Videos</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="playVideo('Images/Videos/IMG_2286.mov')">Football Highlights</a>
+      <a href="#" onclick="playVideo('Images/Videos/IMG_2290.mov')">Fishing Trip</a>
+      <a href="#" onclick="playVideo('Images/Videos/IMG_2301.mov')">Family Fun</a>
+    </div>
+  </nav>
 </header>
 
-<!-- Photos of Ashley -->
+<!-- Photos of Cash -->
 <section class="photo-group">
-  <h2>Cash loves himself some fishing!.</h2>
+  <h2>Cash with Friends and Family</h2>
   <div class="fanned-gallery">
-    <img src="Images/IMG_1735.jpeg" alt="cash 1" style="--angle: -10deg" onclick="enlargeImage(this)">
+    <img src="Images/IMG_1739.jpeg" alt="Cash 1" style="--angle: -10deg" onclick="enlargeImage(this)">
     <img src="Images/IMG_1735.jpeg" alt="Cash 2" style="--angle: 0deg" onclick="enlargeImage(this)">
     <img src="Images/IMG_3849.JPEG" alt="Cash 3" style="--angle: 10deg" onclick="enlargeImage(this)">
-    <img src="Images/IMG_7757.jpg" alt="Cash 3" style="--angle: 30deg" onclick="enlargeImage(this)">
+    <img src="Images/IMG_7757.jpg" alt="Cash 4" style="--angle: 20deg" onclick="enlargeImage(this)">
   </div>
-  <p class="description">
-    Cash out deep sea fishing in Tampa!
-  </p>
 </section>
 
-<!-- Add pictures  -->
 <section class="photo-group">
-  <h2>Cash and Ashley</h2>
+  <h2>Cash’s Group Photos</h2>
   <div class="fanned-gallery">
-    <img src="Images/IMG_7806.jpg" alt="cash 1" style="--angle: -10deg" onclick="enlargeImage(this)">
-    <img src="Images/IMG_7793.jpg" alt="cash 2" style="--angle: 0deg" onclick="enlargeImage(this)">
+    <img src="Images/IMG_7806.jpg" alt="Cash 5" style="--angle: -10deg" onclick="enlargeImage(this)">
+    <img src="Images/IMG_7793.jpg" alt="Cash 6" style="--angle: 0deg" onclick="enlargeImage(this)">
+    <img src="Images/IMG_1734.jpeg" alt="Cash 7" style="--angle: 10deg" onclick="enlargeImage(this)">
   </div>
-  <p class="description">
-   Cash out to lunch with his Mom
-  </p>
 </section>
 
 <!-- Hidden Modal for Enlarged Image -->
@@ -44,12 +47,20 @@
   <img class="modal-content" id="modalImg" alt="Enlarged image">
 </div>
 
-<!-- JavaScript for modal -->
+<!--  Small Popup Video Modal -->
+<div id="videoModal" class="video-modal">
+  <div class="video-wrapper">
+    <span class="close-btn" onclick="closeVideo()">&times;</span>
+    <video id="modalVideo" class="video-content" controls></video>
+  </div>
+</div>
+
+<!-- JavaScript for image and video modals -->
 <script>
+  // === Image popup modal ===
   function enlargeImage(imgElement) {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImg');
-
     modal.style.display = "block";
     modalImg.src = imgElement.src;
   }
@@ -57,8 +68,23 @@
   function closeModal() {
     document.getElementById("imageModal").style.display = "none";
   }
-</script>
 
+  // === Video popup modal ===
+  function playVideo(videoSrc) {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modal.style.display = "flex";
+    modalVideo.src = videoSrc;
+    modalVideo.play();
+  }
+
+  function closeVideo() {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modal.style.display = "none";
+    modalVideo.pause();
+    modalVideo.src = "";
+  }
+</script>
 </body>
 </html>
-

@@ -1,6 +1,6 @@
 /* === General Page Styling === */
 body {
-    background: url(Images/ittemaldiviano-jmkMl20jNS0-unsplash.jpg) no-repeat center center fixed;
+    background: url(Images/pexels-thomas-k-268383750-18405236.jpg) no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -14,8 +14,7 @@ header {
 }
 
 h1, h2 {
-    color: white;
-    font-size: 50px;
+    color: #4b2e05;
 }
 
 /* === Dropdown Menu === */
@@ -29,7 +28,7 @@ h1, h2 {
     background-color: #1b4d3e;
     color: white;
     padding: 10px 20px;
-    font-size: 30px;
+    font-size: 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;

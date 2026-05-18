@@ -7,35 +7,27 @@
     <link rel="Stylesheet" href="ashley-style.css">
 </head>
 <body>
-
 <header>
     <h1>Ashley's Gallery</h1>
     <p>Ashley's Memories from 2025 and beyond</p>
+
+<!-- Dropdown menu for Videos-->
+<nav class="dropdown">
+   <button class="dropbtn"> Watch Ashley's videos</button>
+    <div class="dropdown-content">
+       <a href="#" onclick="playVideo('Images/Videos/IMG_2286.mov')"> Football Highlights</a>
+    </div>
+  </nav>
 </header>
 
 <!-- Photos of Ashley -->
 <section class="photo-group">
-    <h2>Ashley's Halloween Costume and fishing costume.</h2>
+    <h2>Ashley with Friends and Family.</h2>
     <div class="fanned-gallery">
         <img src="Images/IMG_3843.jpeg" alt="Ashley 1" style="--angle: -10deg" onclick="enlargeImage(this)">
         <img src="Images/IMG_0195.jpg" alt="Ashley 2" style="--angle: 0deg" onclick="enlargeImage(this)">
         <img src="Images/danny-ashley.jpg" alt="Ashley 3" style="--angle: 0deg" onclick="enlargeImage(this)">
     </div>
-    <p class="description">
-        She's a busy Mom!
-    </p>
-</section>
-
-<!-- Add pictures  -->
-<section class="photo-group">
-    <h2></h2>
-    <div class="fanned-gallery">
-
-
-    </div>
-    <p class="description">
-
-    </p>
 </section>
 
 <!-- Hidden Modal for Enlarged Image -->
@@ -43,12 +35,20 @@
     <img class="modal-content" id="modalImg" alt="Enlarged image">
 </div>
 
-<!-- JavaScript for modal -->
+<!--  Small Popup Video Modal -->
+<div id="videoModal" class="video-modal">
+    <div class="video-wrapper">
+        <span class="close-btn" onclick="closeVideo()">&times;</span>
+        <video id="modalVideo" class="video-content" controls></video>
+    </div>
+</div>
+
+<!-- JavaScript for image and video modals -->
 <script>
+    // === Image popup modal ===
     function enlargeImage(imgElement) {
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImg');
-
         modal.style.display = "block";
         modalImg.src = imgElement.src;
     }
@@ -56,8 +56,24 @@
     function closeModal() {
         document.getElementById("imageModal").style.display = "none";
     }
-</script>
 
+    // === Video popup modal ===
+    function playVideo(videoSrc) {
+        const modal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        modal.style.display = "flex";
+        modalVideo.src = videoSrc;
+        modalVideo.play();
+    }
+
+    function closeVideo() {
+        const modal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        modal.style.display = "none";
+        modalVideo.pause();
+        modalVideo.src = "";
+    }
+</script>
 </body>
 </html>
 

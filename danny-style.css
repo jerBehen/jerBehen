@@ -9,54 +9,77 @@ body {
     color:#EED9B7;
 }
 
-
 header {
     margin-bottom: 40px;
 }
 
-h1 {
-    font-size: 3.5em;
-    margin-bottom: 0;
+h1, h2 {
+    color: #4b2e05;
 }
 
-h2 {
-    font-size: 2.0em;
-    margin-top: 30px;
+/* === Dropdown Menu === */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
 }
 
-.photo-group {
-    margin-bottom: 60px;
+.dropbtn {
+    background-color: #1b4d3e;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.description {
-    max-width: 800px;
-    margin: 20px auto;
-    font-size: 3.1em;
-    color: #444;
+.dropbtn:hover {
+    background-color: #14503b;
 }
 
-/* === Fanned Gallery Using Flex + CSS Variables === */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* === Fanned Gallery in Rows === */
 .fanned-gallery {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    gap: 0;
-    margin-top: 20px;
-    padding: 20px 0;
+    flex-wrap: wrap;  /* Allows multiple rows */
+    gap: 25px;
+    margin: 30px auto;
 }
 
 .fanned-gallery img {
-    width: auto;
-    height: 180px;
+    width: 175px;
     border: 4px solid #392121;
     border-radius: 10px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
     transform: rotate(var(--angle, 0deg));
-    transform-origin: bottom center;
     transition: transform 0.3s ease, z-index 0.3s ease;
     cursor: pointer;
-    margin: 0 -60px; /* Overlap like a fan */
-    z-index: 1;
 }
 
 .fanned-gallery img:hover {
@@ -85,3 +108,56 @@ h2 {
     border-radius: 10px;
     box-shadow: 0 0 20px #000;
 }
+
+/* === Small Popup Video Modal (Button Inside Video Box) === */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.video-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.video-content {
+    width: 500px;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000;
+    background-color: #000;
+}
+
+/* The “×” inside the video box */
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2200;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #ff4444;
+    color: #fff;
+}
+

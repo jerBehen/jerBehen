@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Danny's Gallery</title>
-    <link rel="Stylesheet" href="danny-style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinsey's Gallery</title>
+    <link rel="stylesheet" href="kinsey-style.css">
 </head>
 <body>
 <header>
-    <h1>Danny's Gallery</h1>
-    <p>Photos and Videos of Dannny</p>
+    <h1>Kinsey's Gallery</h1>
+    <p>Photos and Videos of Kinsey</p>
 
-  <!-- Dropdown menu for videos -->
-  <nav class="dropdown">
-      <button class="dropbtn">Watch Videos of Danny</button>
-      <div class="dropdown-content">
-          <a href="#" onclick="playVideo('Images/Videos/IMG_2286.mov')">Video Title </a>
-      </div>
+    <!-- Dropdown menu for videos-->
+<nav class="dropDown">
+    <button class="dropbtn">Watch Kinsey's Videos</button>
+    <div class="dropdown-content">
+        <a href="#" onclick="playVideo('Images/Videos/IMG_2286.mov')">Video Title</a>
+    </div>
   </nav>
 </header>
 
-<!-- Photos of danny-->
+<!-- Photos of Kinsey -->
 <section class="photo-group">
-    <h2>Danny's Photos</h2>
+    <h2>Kinsey's Photos</h2>
     <div class="fanned-gallery">
-        <img src="Images/danny-ashley.jpg" alt="Danny 1" style="--angle: -10deg" onclick="enlargeImage(this)">
-        <img src="Images/IMG_4220.jpeg" alt="Danny 2" style="--angle: 0deg" onclick="enlargeImage(this)">
+        <img src="Images/kinsey.jpg" alt="kinsey 1" style="--angle: -10deg" onclick="enlargeImage(this)">
     </div>
 </section>
 
@@ -34,21 +33,21 @@
     <img class="modal-content" id="modalImg" alt="Enlarged image">
 </div>
 
-<!--  Small Popup Video Modal -->
+<!-- Small Popup Video Modal -->
 <div id="videoModal" class="video-modal">
     <div class="video-wrapper">
         <span class="close-btn" onclick="closeVideo()">&times;</span>
         <video id="modalVideo" class="video-content" controls></video>
-    </div>
+        </div>
 </div>
 
 <!-- JavaScript for image and video modals -->
 <script>
-    // === Image popup modal ===
+    // ==== Image popup modal ===
     function enlargeImage(imgElement) {
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImg');
-        modal.style.display = "block";
+        modal.style.display = 'block';
         modalImg.src = imgElement.src;
     }
 
@@ -56,11 +55,11 @@
         document.getElementById("imageModal").style.display = "none";
     }
 
-    // === Video popup modal ===
+    //=== Video popup modal ===
     function playVideo(videoSrc) {
         const modal = document.getElementById('videoModal');
         const modalVideo = document.getElementById('modalVideo');
-        modal.style.display = "flex";
+        modal.style.display = 'flex';
         modalVideo.src = videoSrc;
         modalVideo.play();
     }

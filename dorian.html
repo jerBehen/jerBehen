@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorian's Gallery</title>
+    <link rel="stylesheet" href="felix-style.css">
+</head>
+<body>
+<header>
+    <h1></h1>
+    <p>Photos and Videos of Dorian</p>
+
+
+    <!-- Dropdown menu for Videos -->
+    <nav class="dropdown">
+        <button class="dropbtn">Watch Dorian's Videos</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="playVideo('Images/Videos/IMG_2286.mov')">Video Title</a>
+        </div>
+    </nav>
+</header>
+
+<!-- Photos of Dorian -->
+<section class="photo-group">
+    <h2>Dorian</h2>
+    <div class="fanned-gallery">
+        <img src="Images/dorian_01.jpg" alt="Dorian 1" style="--angle: -15deg" onclick="enlargeImage(this)">
+        <img src="Images/image000003.jpg" alt="Dorian 2" style="--angle: -5deg" onclick="enlargeImage(this)">
+        <img src="Images/Dorian%20birthday.jpg" alt="Dorian 3" style="--angle: 20deg" onclick="enlargeImage(this)">
+        <img src="Images/Dorian-04.jpg" alt="Dorian 4" style="--angle: 20deg" onclick="enlargeImage(this)">
+        <img src="Images/FelixDorian-04.jpg" alt="Dorian 5" style="--angle: 20deg" onclick="enlargeImage(this)">
+        <img src="Images/DorianFelix-06.jpg" alt="Dorian 6" style="--angle: 20deg" onclick="enlargeImage(this)">
+    </div>
+    <div class="fanned-gallery">
+        <img src="Images/Dorian-07.jpeg" alt="Dorian 1" style="--angle: 20deg" onclick="enlargeImage(this)">
+
+    </div>
+
+</section>
+<!-- Hidden Modal for Enlarge Image -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <img class="modal-content" id="modalImg" alt="Enlarged image">
+</div>
+
+<!-- Small Popup Video -->
+<div id="videoModal" class="video-modal">
+    <div class="video-wrapper">
+        <span class="close-btn" onclick="closeVideo()">&times;</span>
+        <video id="modalVideo" class="video-content" controls></video>
+    </div>
+</div>
+
+<!-- JavaScript for image and video modals -->
+<script>
+    // === Image Popup Modal ===
+    function enlargeImage(imgElement) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        modal.style.display = "block";
+        modalImg.src = imgElement.src;
+    }
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+
+    // === Vidoe popup modal ===
+    function playVideo(videoSrc) {
+        const modal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        modal.style.display = "flex";
+        modalVideo.src = vidoeSrc;
+        modalVideo.play();
+    }
+    function closeVideo() {
+        const modal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        modal.style.display= "none";
+        modalVideo.pause();
+        modalVideo.src = "";
+    }
+</script>
+</body>
+</html>

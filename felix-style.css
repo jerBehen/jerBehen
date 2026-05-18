@@ -1,21 +1,21 @@
 /* === General Page Styling === */
 body {
-    background: url(Images/ittemaldiviano-jmkMl20jNS0-unsplash.jpg) no-repeat center center fixed;
+    background: url(Images/pexels-zura-modebadze-2828355-4368765.jpg) no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 30px;
+    padding: 10px;
     margin: 0;
     color:#EED9B7;
 }
 
 header {
-    margin-bottom: 40px;
+    margin-bottom: 80px;
+    font-size: 30px;
 }
 
 h1, h2 {
     color: white;
-    font-size: 50px;
 }
 
 /* === Dropdown Menu === */
@@ -29,7 +29,7 @@ h1, h2 {
     background-color: #1b4d3e;
     color: white;
     padding: 10px 20px;
-    font-size: 30px;
+    font-size: 40px;
     border: none;
     border-radius: 5px;
     cursor: pointer;

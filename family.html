@@ -7,10 +7,17 @@
   <link rel="Stylesheet" href="family-style.css">
 </head>
 <body>
-
 <header>
   <h1>Family Photo Gallery</h1>
   <p>Family Memories from 2025 and beyond</p>
+
+  <!-- Dropdown menu for videos -->
+  <nav class="dropdown">
+    <button class="dropbtn">Family videos</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="playVideo('Images/videos/RyderCash.mov')">Video</a>
+    </div>
+  </nav>
 </header>
 
 <!-- Photos of Ashley -->
@@ -27,9 +34,11 @@
 
 <!-- Add pictures  -->
 <section class="photo-group">
-  <h2>Danny and Ashley</h2>
+  <h2></h2>
   <div class="fanned-gallery">
-    <img src="Images/danny-ashley.jpg" alt="cash 1" style="--angle: -10deg" onclick="enlargeImage(this)">
+    <img src="Images/danny-ashley.jpg" alt="danny-ashly 1" style="--angle: -10deg" onclick="enlargeImage(this)">
+    <img src="Images/IMG_8392.jpg" alt="cash 1" style="--angle: -10deg" onclick="enlargeImage(this)">
+    <img src="Images/IMG_8387.jpg" alt="danny-ashly 1" style="--angle: 25deg" onclick="enlargeImage(this)">
   </div>
   <p class="description">
 
@@ -39,6 +48,14 @@
 <!-- Hidden Modal for Enlarged Image -->
 <div id="imageModal" class="modal" onclick="closeModal()">
   <img class="modal-content" id="modalImg" alt="Enlarged image">
+</div>
+
+<!--  Small Popup Video Modal -->
+<div id="videoModal" class="video-modal">
+  <div class="video-wrapper">
+    <span class="close-btn" onclick="closeVideo()">&times;</span>
+    <video id="modalVideo" class="video-content" controls></video>
+  </div>
 </div>
 
 <!-- JavaScript for modal -->
@@ -54,8 +71,24 @@
   function closeModal() {
     document.getElementById("imageModal").style.display = "none";
   }
-</script>
 
+  // === Video popup modal ===
+  function playVideo(videoSrc) {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modal.style.display = "flex";
+    modalVideo.src = videoSrc;
+    modalVideo.play();
+  }
+
+  function closeVideo() {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modal.style.display = "none";
+    modalVideo.pause();
+    modalVideo.src = "";
+  }
+</script>
 </body>
 </html>
 

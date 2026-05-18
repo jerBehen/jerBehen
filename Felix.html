@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felix's Gallery</title>
+  <link rel="stylesheet" href="felix-style.css">
+</head>
+<body>
+<header>
+  <h1>Felix's Gallery</h1>
+  <p>Photos and Videos of Felix</p>
+
+
+<!-- Dropdown menu for Videos -->
+<nav class="dropdown">
+    <button class="dropbtn">Watch Felix's Videos</button>
+    <div class="dropdown-content">
+        <a href="#" onclick="playVideo('Images/Videos/IMG_2286.mov')">Video Title</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Photos of Felix -->
+<section class="photo-group">
+  <h2>Felix</h2>
+  <div class="fanned-gallery">
+    <img src="Images/image000002.jpg" alt="Felix 1" style="--angle: -15deg" onclick="enlargeImage(this)">
+    <img src="Images/TheKids-01.jpg" alt="Felix 2" style="--angle: -5deg" onclick="enlargeImage(this)">
+    <img src="Images/image_1.jpg" alt="Felix 3" style="--angle: 10deg" onclick="enlargeImage(this)">
+    <img src="Images/imagejpeg_1.jpg"  alt="Felix 4" style="--angle: 15deg" onclick="enlargeImage(this)">
+    <img src="Images/FelixAmelia-05.jpg"  alt="Felix 5" style="--angle: 15deg" onclick="enlargeImage(this)">
+    <img src="Images/FelixDorian-04.jpg"  alt="Felix 6" style="--angle: 15deg" onclick="enlargeImage(this)">
+  </div>
+  <div class="fanned-gallery">
+    <img src="Images/Felix-01.jpg"  alt="Felix 7" style="--angle: 15deg" onclick="enlargeImage(this)">
+    <img src="Images/DorianFelix-06.jpg"  alt="Felix 8" style="--angle: 15deg" onclick="enlargeImage(this)">
+  </div>
+
+</section>
+<!-- Hidden Modal for Enlarge Image -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <img class="modal-content" id="modalImg" alt="Enlarged image">
+  </div>
+
+<!-- Small Popup Video -->
+<div id="videoModal" class="video-modal">
+  <div class="video-wrapper">
+    <span class="close-btn" onclick="closeVideo()">&times;</span>
+    <video id="modalVideo" class="video-content" controls></video>
+  </div>
+</div>
+
+<!-- JavaScript for image and video modals -->
+<script>
+  // === Image Popup Modal ===
+  function enlargeImage(imgElement) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    modal.style.display = "block";
+    modalImg.src = imgElement.src;
+  }
+  function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+
+  // === Vidoe popup modal ===
+  function playVideo(videoSrc) {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modal.style.display = "flex";
+    modalVideo.src = vidoeSrc;
+    modalVideo.play();
+  }
+  function closeVideo() {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modal.style.display= "none";
+    modalVideo.pause();
+    modalVideo.src = "";
+  }
+</script>
+</body>
+</html>
